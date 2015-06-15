@@ -65,11 +65,11 @@
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 12330,
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 8327,
                 "dataresult": "ERROR: invalid object type jobj"
             },
-            "evaluatorReader": true,
+            "evaluatorReader": false,
             "lineCount": 3,
             "initialization": true
         },
@@ -103,8 +103,8 @@
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 659,
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 692,
                 "dataresult": "ERROR: invalid object type NULL"
             },
             "evaluatorReader": true,
@@ -138,8 +138,8 @@
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 1675,
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 1385,
                 "dataresult": "ERROR: invalid object type NULL"
             },
             "evaluatorReader": true,
@@ -169,8 +169,8 @@
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 1707
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 2517
             },
             "evaluatorReader": true,
             "lineCount": 4
@@ -197,15 +197,15 @@
             "evaluator": "R",
             "input": {
                 "body": [
-                    "head(select(irisDF, irisDF$Species))"
+                    "head(select(irisDF,irisDF$Species))"
                 ]
             },
             "output": {
                 "state": {},
                 "selectedType": "Table",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 716
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 143
             },
             "evaluatorReader": true,
             "lineCount": 1
@@ -231,8 +231,8 @@
                 "state": {},
                 "selectedType": "Table",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 715
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 705
             },
             "evaluatorReader": true,
             "lineCount": 1
@@ -261,8 +261,8 @@
                 "state": {},
                 "selectedType": "Table",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 733
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 721
             },
             "evaluatorReader": true,
             "lineCount": 4
@@ -289,8 +289,8 @@
                 "state": {},
                 "selectedType": "Table",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 639
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 675
             },
             "evaluatorReader": true,
             "lineCount": 2
@@ -316,8 +316,8 @@
                 "state": {},
                 "selectedType": "Table",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 123,
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 145,
                 "dataresult": [
                     4500
                 ]
@@ -344,10 +344,10 @@
             },
             "output": {
                 "state": {},
-                "selectedType": "Results",
+                "selectedType": "Text",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 1302,
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 1216,
                 "dataresult": [
                     4500
                 ]
@@ -376,8 +376,8 @@
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 848,
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 829,
                 "dataresult": "ERROR: invalid object type NULL"
             },
             "evaluatorReader": true,
@@ -394,7 +394,7 @@
         {
             "id": "sectionvXkqiE",
             "type": "section",
-            "title": "First, let's load up a Parquet file of transaction data",
+            "title": "First, let's load up some transaction data",
             "level": 2,
             "evaluatorReader": false,
             "collapsed": false
@@ -405,7 +405,7 @@
             "evaluator": "R",
             "input": {
                 "body": [
-                    "txnsRaw <- read.df(sqlCtx, \"/Users/cfreeman/SparkR/SparkR_DataFrame_Demo/Customer_Transactions.parquet\")",
+                    "txnsRaw <- read.df(sqlCtx, \"/Users/cfreeman/SparkR/SparkR_DataFrame_Demo/Customer_Transactions.json\", \"json\")",
                     "printSchema(txnsRaw)",
                     "head(txnsRaw)"
                 ]
@@ -414,8 +414,8 @@
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 2219
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 2102
             },
             "evaluatorReader": true,
             "lineCount": 3
@@ -442,8 +442,8 @@
                 "state": {},
                 "selectedType": "Text",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 84,
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 113,
                 "dataresult": [
                     "GroupedData"
                 ]
@@ -474,8 +474,8 @@
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 4598
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 5689
             },
             "evaluatorReader": true,
             "lineCount": 3
@@ -501,8 +501,8 @@
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 5021,
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 7348,
                 "dataresult": "ERROR: invalid object type DataFrame"
             },
             "evaluatorReader": true,
@@ -542,8 +542,8 @@
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 4791
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 4172
             },
             "evaluatorReader": true,
             "lineCount": 6
@@ -554,7 +554,7 @@
             "title": "Create a new field with `mutate`",
             "level": 2,
             "evaluatorReader": false,
-            "collapsed": false
+            "collapsed": true
         },
         {
             "id": "code1cO7PD",
@@ -576,8 +576,8 @@
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "2f677339-2c28-47b5-b560-577ab29b0d0f",
-                "elapsedTime": 3074
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 8145
             },
             "evaluatorReader": true,
             "lineCount": 8
@@ -603,8 +603,8 @@
                 "state": {},
                 "selectedType": "Hidden",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 86,
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 105,
                 "dataresult": [
                     "magrittr",
                     "SparkR",
@@ -653,8 +653,8 @@
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 7167,
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 7504,
                 "dataresult": "ERROR: invalid object type DataFrame"
             },
             "evaluatorReader": true,
@@ -674,7 +674,7 @@
             "evaluator": "R",
             "input": {
                 "body": [
-                    "sample <- read.df(sqlCtx, \"/Users/cfreeman/SparkR/SparkR_DataFrame_Demo/DM_Sample.parquet/\")",
+                    "sample <- read.df(sqlCtx, \"/Users/cfreeman/SparkR/SparkR_DataFrame_Demo/DM_Sample.json/\", \"json\")",
                     "printSchema(sample)",
                     "count(sample)"
                 ]
@@ -683,8 +683,8 @@
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 165,
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 758,
                 "dataresult": [
                     2000
                 ]
@@ -698,7 +698,7 @@
             "title": "Use a single pipeline to perform a series of transformations and create multiple new DataFrames",
             "level": 2,
             "evaluatorReader": false,
-            "collapsed": false
+            "collapsed": true
         },
         {
             "id": "codedgVULD",
@@ -707,7 +707,7 @@
             "input": {
                 "body": [
                     "customerData %>%",
-                    "  join(sample, .$cust_id == sample$cust_id, \"left_outer\") %>% {",
+                    "  join(sample, .$cust_id == sample$cust_id, \"left_outer\") %T>% {",
                     "    # Create training data",
                     "    filter(., isNull(sample$cust_id)) %>%",
                     "      select(customerData$\"*\") ->> trainDF",
@@ -715,20 +715,19 @@
                     "    filter(., isNotNull(sample$cust_id)) %>%",
                     "      select(customerData$\"*\", sample$respondYes) ->> testDF",
                     "  }",
-                    "",
-                    "head(trainDF)"
+                    " head(trainDF)"
                 ]
             },
             "output": {
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 4415,
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 14270,
                 "dataresult": "ERROR: invalid object type DataFrame"
             },
             "evaluatorReader": true,
-            "lineCount": 11
+            "lineCount": 10
         },
         {
             "id": "codeJBz4hi",
@@ -736,15 +735,15 @@
             "evaluator": "R",
             "input": {
                 "body": [
-                    "explain(trainDF)"
+                    "explain(testDF)"
                 ]
             },
             "output": {
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 208,
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 87,
                 "dataresult": "ERROR: invalid object type NULL"
             },
             "evaluatorReader": true,
@@ -763,8 +762,8 @@
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "a8eb117b-ed93-4bd2-b21f-55ccdcfa680d",
-                "elapsedTime": 4300
+                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
+                "elapsedTime": 10732
             },
             "evaluatorReader": true,
             "lineCount": 1
