@@ -3,53 +3,68 @@ sc <- sparkR.init("local[*]")
 sqlCtx <- sparkRSQL.init(sc)
 
 # Creating Data Frames ----
-head(iris)
+# From a local data.frame
 irisDF <- createDataFrame(sqlCtx, iris)
 printSchema(irisDF)
 
-irisDF$Petal_Area <- irisDF$Petal_Length * irisDF$Petal_Width
-head(irisDF)
+# Or from raw data using a schema
+listOfLists <- list(list(1, 2, 3),
+                    list("a","b","c"),
+                    list(1.2, 3.4, 5.6))
+schema <- structType(structField("col1", "integer"),
+                     structField("col2", "string"),
+                     structField("col3", "numeric"))
+head(newDF <- createDataFrame(sqlCtx, listOfLists, schema))
 
-irisDF$Petal_Area <- NULL
-head(irisDF)
-
-# Working with external data types ----
-demo <- read.df(sqlCtx, "/Users/cfreeman/SparkR/SparkSummit2015_Demo/Customer_Demographics.json", "json")
+# Or from an existing data source
+demo <- read.df(sqlCtx, "/Users/cfreeman/SparkR/SparkR_DataFrame_Demo/Customer_Demographics.json", "json")
 printSchema(demo)
 head(demo)
 
 # Basic Operations ----
-head(select(demo, demo$age))
+# Reference a specific column with `$`
+head(select(irisDF,irisDF$Species))
 
+# Or multiple columns with `[, c("foo", "bar")]`
+head(irisDF[,c("Petal_Length", "Sepal_Length")])
+
+# Create new columns with `$` or `mutate`
+# Create Petal_Area
+irisDF$Petal_Area <- irisDF$Petal_Length * irisDF$Petal_Width
+# Create Sepal_Area
+head(irisDF <- mutate(irisDF, Sepal_Area = irisDF$Sepal_Length * irisDF$Sepal_Width))
+
+# And drop them just as easily!
+irisDF$Petal_Area <- NULL
+head(irisDF)
+
+# Filter on a pattern with `like`
 head(filter(demo, like(demo$age, "40to44")))
 
+# Count records of a certain type with `where`
 head(count(where(demo, demo$region == "Pacific")))
 
 # Aggregations ----
-txnsRaw <- read.df(sqlCtx, "/Users/cfreeman/SparkR/SparkSummit2015_Demo/Customer_Transactions.parquet")
-
+#First, let's load up some transaction data
+txnsRaw <- read.df(sqlCtx, "/Users/cfreeman/SparkR/SparkR_DataFrame_Demo/Customer_Transactions.json", "json")
 printSchema(txnsRaw)
 head(txnsRaw)
 
-# Grouping
-groupByCustomer <- groupBy(txnsRaw, txnsRaw$cust_id)
-class(groupByCustomer)
-
-# Summarize
-head(perCustomer <- summarize(groupByCustomer,
+# Aggregate data using `groupBy` and `summarize`
+head(perCustomer <- summarize(groupBy(txnsRaw, txnsRaw$cust_id),
                               txns = countDistinct(txnsRaw$day_num),
                               spend = sum(txnsRaw$extended_price)))
 
 # Joins ----
 # Basic join
 head(limit(select(
-                join(perCustomer, demo, perCustomer$cust_id == demo$cust_id),
-                  demo$"*",
-                  perCustomer$txns,
-                  perCustomer$spend),
-                10))
+            join(perCustomer, demo, perCustomer$cust_id == demo$cust_id),
+            demo$"*",
+            perCustomer$txns,
+            perCustomer$spend),
+            10))
 
-# But we'd also like to calculate a new field based on one of our current fields
+# But let's say we want to combine a few steps into one process
 head(limit(mutate(
             select(
               join(perCustomer, demo, perCustomer$cust_id == demo$cust_id),
@@ -72,14 +87,15 @@ customerData <- perCustomer %>%
                   }
 head(customerData)
   
-# DataFrame Pipelines ----
-sample <- loadDF(sqlCtx, "/Users/cfreeman/SparkR/SparkR_DataFrame_Demo/DM_Sample.parquet/")
+
+# Bonus: DataFrame Pipelines! ----
+sample <- read.df(sqlCtx, "/Users/cfreeman/SparkR/SparkR_DataFrame_Demo/DM_Sample.json/", "json")
 printSchema(sample)
 count(sample)
 
 # Use a single pipeline to perform a series of transformations and create multiple new DataFrames
 customerData %>%
-  join(sample, .$cust_id == sample$cust_id, "left_outer") %>% {
+  join(sample, .$cust_id == sample$cust_id, "left_outer") %T>% {
     # Create training data
     filter(., isNull(sample$cust_id)) %>%
       select(customerData$"*") ->> trainDF
@@ -88,6 +104,7 @@ customerData %>%
       select(customerData$"*", sample$respondYes) ->> testDF
   }
 
-head(trainDF)
+printSchema(trainDF)
+printSchema(testDF)
 
 

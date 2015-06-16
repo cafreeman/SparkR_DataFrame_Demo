@@ -65,11 +65,11 @@
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 8327,
+                "shellId": "a1586fd5-ace4-424c-920b-5c011f731a18",
+                "elapsedTime": 5925,
                 "dataresult": "ERROR: invalid object type jobj"
             },
-            "evaluatorReader": false,
+            "evaluatorReader": true,
             "lineCount": 3,
             "initialization": true
         },
@@ -103,8 +103,8 @@
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 692,
+                "shellId": "a1586fd5-ace4-424c-920b-5c011f731a18",
+                "elapsedTime": 1988,
                 "dataresult": "ERROR: invalid object type NULL"
             },
             "evaluatorReader": true,
@@ -130,20 +130,19 @@
                     "schema <- structType(structField(\"col1\", \"integer\"),",
                     "                     structField(\"col2\", \"string\"),",
                     "                     structField(\"col3\", \"numeric\"))",
-                    "head(newDF <- createDataFrame(sqlCtx, listOfLists, schema))",
-                    "printSchema(newDF)"
+                    "head(newDF <- createDataFrame(sqlCtx, listOfLists, schema))"
                 ]
             },
             "output": {
                 "state": {},
-                "selectedType": "Results",
+                "selectedType": "Table",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 1385,
+                "shellId": "7064b7b5-247c-4156-96e8-38d811ce6d0d",
+                "elapsedTime": 1583,
                 "dataresult": "ERROR: invalid object type NULL"
             },
             "evaluatorReader": true,
-            "lineCount": 8
+            "lineCount": 7
         },
         {
             "id": "sectionSjvzgB",
@@ -169,8 +168,8 @@
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 2517
+                "shellId": "a1586fd5-ace4-424c-920b-5c011f731a18",
+                "elapsedTime": 1287
             },
             "evaluatorReader": true,
             "lineCount": 4
@@ -204,8 +203,8 @@
                 "state": {},
                 "selectedType": "Table",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 143
+                "shellId": "c0da7c2f-9067-4e66-b54e-ccaff2e78505",
+                "elapsedTime": 100
             },
             "evaluatorReader": true,
             "lineCount": 1
@@ -231,8 +230,8 @@
                 "state": {},
                 "selectedType": "Table",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 705
+                "shellId": "a1586fd5-ace4-424c-920b-5c011f731a18",
+                "elapsedTime": 1407
             },
             "evaluatorReader": true,
             "lineCount": 1
@@ -261,8 +260,8 @@
                 "state": {},
                 "selectedType": "Table",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 721
+                "shellId": "a1586fd5-ace4-424c-920b-5c011f731a18",
+                "elapsedTime": 723
             },
             "evaluatorReader": true,
             "lineCount": 4
@@ -289,8 +288,8 @@
                 "state": {},
                 "selectedType": "Table",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 675
+                "shellId": "a1586fd5-ace4-424c-920b-5c011f731a18",
+                "elapsedTime": 682
             },
             "evaluatorReader": true,
             "lineCount": 2
@@ -316,8 +315,8 @@
                 "state": {},
                 "selectedType": "Table",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 145,
+                "shellId": "a1586fd5-ace4-424c-920b-5c011f731a18",
+                "elapsedTime": 142,
                 "dataresult": [
                     4500
                 ]
@@ -346,39 +345,11 @@
                 "state": {},
                 "selectedType": "Text",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 1216,
+                "shellId": "a1586fd5-ace4-424c-920b-5c011f731a18",
+                "elapsedTime": 1169,
                 "dataresult": [
                     4500
                 ]
-            },
-            "evaluatorReader": true,
-            "lineCount": 1
-        },
-        {
-            "id": "sectionIZ38Y0",
-            "type": "section",
-            "title": "Sort on a specific column with `arrange`",
-            "level": 2,
-            "evaluatorReader": false,
-            "collapsed": false
-        },
-        {
-            "id": "code15bqyk",
-            "type": "code",
-            "evaluator": "R",
-            "input": {
-                "body": [
-                    "showDF(arrange(demo, demo$income), 25)"
-                ]
-            },
-            "output": {
-                "state": {},
-                "selectedType": "Results",
-                "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 829,
-                "dataresult": "ERROR: invalid object type NULL"
             },
             "evaluatorReader": true,
             "lineCount": 1
@@ -414,47 +385,16 @@
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 2102
+                "shellId": "a1586fd5-ace4-424c-920b-5c011f731a18",
+                "elapsedTime": 2226
             },
             "evaluatorReader": true,
             "lineCount": 3
         },
         {
-            "id": "sectionbI9rkM",
-            "type": "section",
-            "title": "Grouped Data using `groupBy`",
-            "level": 2,
-            "evaluatorReader": false,
-            "collapsed": false
-        },
-        {
-            "id": "codedwzgPb",
-            "type": "code",
-            "evaluator": "R",
-            "input": {
-                "body": [
-                    "groupByCustomer <- groupBy(txnsRaw, txnsRaw$cust_id)",
-                    "class(groupByCustomer)"
-                ]
-            },
-            "output": {
-                "state": {},
-                "selectedType": "Text",
-                "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 113,
-                "dataresult": [
-                    "GroupedData"
-                ]
-            },
-            "evaluatorReader": true,
-            "lineCount": 2
-        },
-        {
             "id": "sectiontKWhga",
             "type": "section",
-            "title": "Aggregate data using `summarize`",
+            "title": "Aggregate data using `groupBy` and `summarize`",
             "level": 2,
             "evaluatorReader": false,
             "collapsed": false
@@ -465,48 +405,20 @@
             "evaluator": "R",
             "input": {
                 "body": [
-                    "head(perCustomer <- summarize(groupByCustomer,",
+                    "head(perCustomer <- summarize(groupBy(txnsRaw, txnsRaw$cust_id),",
                     "                              txns = countDistinct(txnsRaw$day_num),",
                     "                              spend = sum(txnsRaw$extended_price)))"
                 ]
             },
             "output": {
                 "state": {},
-                "selectedType": "Results",
+                "selectedType": "Table",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 5689
+                "shellId": "a1586fd5-ace4-424c-920b-5c011f731a18",
+                "elapsedTime": 5164
             },
             "evaluatorReader": true,
             "lineCount": 3
-        },
-        {
-            "id": "sectionamVgsf",
-            "type": "section",
-            "title": "View summary stats with using `describe`",
-            "level": 2,
-            "evaluatorReader": false,
-            "collapsed": false
-        },
-        {
-            "id": "codenwZNUI",
-            "type": "code",
-            "evaluator": "R",
-            "input": {
-                "body": [
-                    "head(describe(perCustomer, \"txns\", \"spend\"))"
-                ]
-            },
-            "output": {
-                "state": {},
-                "selectedType": "Results",
-                "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 7348,
-                "dataresult": "ERROR: invalid object type DataFrame"
-            },
-            "evaluatorReader": true,
-            "lineCount": 1
         },
         {
             "id": "sectionrWerBo",
@@ -540,10 +452,10 @@
             },
             "output": {
                 "state": {},
-                "selectedType": "Results",
+                "selectedType": "Table",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 4172
+                "shellId": "a1586fd5-ace4-424c-920b-5c011f731a18",
+                "elapsedTime": 4013
             },
             "evaluatorReader": true,
             "lineCount": 6
@@ -551,10 +463,10 @@
         {
             "id": "section4fmJ6D",
             "type": "section",
-            "title": "Create a new field with `mutate`",
+            "title": "But let's say we want to combine a few steps into one process",
             "level": 2,
             "evaluatorReader": false,
-            "collapsed": true
+            "collapsed": false
         },
         {
             "id": "code1cO7PD",
@@ -574,10 +486,10 @@
             },
             "output": {
                 "state": {},
-                "selectedType": "Results",
+                "selectedType": "Table",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 8145
+                "shellId": "a1586fd5-ace4-424c-920b-5c011f731a18",
+                "elapsedTime": 6274
             },
             "evaluatorReader": true,
             "lineCount": 8
@@ -603,8 +515,8 @@
                 "state": {},
                 "selectedType": "Hidden",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 105,
+                "shellId": "a1586fd5-ace4-424c-920b-5c011f731a18",
+                "elapsedTime": 70,
                 "dataresult": [
                     "magrittr",
                     "SparkR",
@@ -631,7 +543,7 @@
             "title": "Let's try that again",
             "level": 2,
             "evaluatorReader": false,
-            "collapsed": false
+            "collapsed": true
         },
         {
             "id": "codeJruWwB",
@@ -651,10 +563,10 @@
             },
             "output": {
                 "state": {},
-                "selectedType": "Results",
+                "selectedType": "Table",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 7504,
+                "shellId": "a1586fd5-ace4-424c-920b-5c011f731a18",
+                "elapsedTime": 6406,
                 "dataresult": "ERROR: invalid object type DataFrame"
             },
             "evaluatorReader": true,
@@ -683,8 +595,8 @@
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 758,
+                "shellId": "a1586fd5-ace4-424c-920b-5c011f731a18",
+                "elapsedTime": 729,
                 "dataresult": [
                     2000
                 ]
@@ -698,7 +610,7 @@
             "title": "Use a single pipeline to perform a series of transformations and create multiple new DataFrames",
             "level": 2,
             "evaluatorReader": false,
-            "collapsed": true
+            "collapsed": false
         },
         {
             "id": "codedgVULD",
@@ -714,40 +626,19 @@
                     "    # Create test data",
                     "    filter(., isNotNull(sample$cust_id)) %>%",
                     "      select(customerData$\"*\", sample$respondYes) ->> testDF",
-                    "  }",
-                    " head(trainDF)"
+                    "  }"
                 ]
             },
             "output": {
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 14270,
-                "dataresult": "ERROR: invalid object type DataFrame"
-            },
-            "evaluatorReader": true,
-            "lineCount": 10
-        },
-        {
-            "id": "codeJBz4hi",
-            "type": "code",
-            "evaluator": "R",
-            "input": {
-                "body": [
-                    "explain(testDF)"
-                ]
-            },
-            "output": {
-                "state": {},
-                "selectedType": "Results",
-                "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 87,
+                "shellId": "a1586fd5-ace4-424c-920b-5c011f731a18",
+                "elapsedTime": 107,
                 "dataresult": "ERROR: invalid object type NULL"
             },
             "evaluatorReader": true,
-            "lineCount": 1
+            "lineCount": 9
         },
         {
             "id": "code2jgeGo",
@@ -755,18 +646,20 @@
             "evaluator": "R",
             "input": {
                 "body": [
-                    "head(testDF)"
+                    "printSchema(trainDF)",
+                    "printSchema(testDF)"
                 ]
             },
             "output": {
                 "state": {},
                 "selectedType": "Results",
                 "pluginName": "R",
-                "shellId": "766d3d63-b4be-46ea-8f87-766bf35c0727",
-                "elapsedTime": 10732
+                "shellId": "a1586fd5-ace4-424c-920b-5c011f731a18",
+                "elapsedTime": 73,
+                "dataresult": "ERROR: invalid object type NULL"
             },
             "evaluatorReader": true,
-            "lineCount": 1
+            "lineCount": 2
         }
     ]
 }
